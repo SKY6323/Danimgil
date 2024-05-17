@@ -1,0 +1,22 @@
+.notice_list{
+    margin-top: 5px;
+}
+.notice_list > li{
+    padding: 12px 0 12px 30px; box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.8);
+    position: relative;
+}
+.notice_list > li::before{
+    content: '';
+    position: absolute;
+    top: 50%; left: 20px;
+    transform: translateY(-50%);
+    width: 2px; height: 2px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.8);
+}
+.notice_list > li + li{
+    border-top: 1px solid rgba(0,0,0,0.2);
+}

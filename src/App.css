@@ -1,38 +1,414 @@
-.App {
+/* 공통 */
+/* 구분선 */
+.divider{
+    width: 100%; height: 5px;
+    background: #EFEFEF;
+}
+/* title */
+.title_area1{
+    width: 100%; height: 55px;
+    padding: 0 15px; box-sizing: border-box;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    position: relative;
+}
+.title_area2{
+    width: 100%; height: 50px;
+    padding: 0 15px; box-sizing: border-box;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.sub_page.title_area2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+}
+.sub_page.title_area2 a > img{
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    margin-left: 20px;
+}
+.sub_page.title_area2 .title{
+    display: flex;
+    align-items: center;
+}
+.sub_page.title_area2 .title > h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: #641B6E;
+}
+.sub_page.title_area2 .title > img{
+    height: 20px;
+    margin-left: 5px;
+}
+/* nav_top */
+.nav_top{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 80px;
+    background: #641B6E;
+    z-index: 100;
+}
+.nav_top h1 {
+    position: absolute;
+    bottom: 10px; left: 15px;
+    height: 25px;
+}
+.nav_top h1 img{
+    display: block;
+    height: 100%;
+}
+
+/* nav_bottom */
+.nav_bottom{
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100vw; height: 80px;
+    padding: 15px 30px 20px; box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    z-index: 100;
+}
+.nav_bottom li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.2;
+}
+.nav_bottom li img{
+    display: block;
+    height: 25px;
+    margin-bottom: 2px;
+    transition: all 0.3s;
+}
+.nav_bottom li.on{opacity: 1;}
+.nav_bottom li.on h2{color: #641B6E;}
+.nav_bottom li h2{
+    font-size: 13px;
+    color: #000;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+/* container */
+.container{
+    width: 100%;
+    padding: 80px 0; box-sizing: border-box;
+    position: relative;
+}
+
+/* bookmark 리스트 */
+.bookmark_list{padding-top: 50px;}
+
+/* list_area -메인 리스트*/
+.list_top {
+  display: flex;
+  width: 100%;
+  height: 35px;
+  margin: 0 auto;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #F5A663;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.hosun {
+  position: absolute;
+  top: 4px;
+  left: 103px;
+  width: 25px;
+  height: 25px;
+  background: #F5A663;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+/* convenience - 편의시설 */
+.convenience {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #fff;
+  width: 100%;
+  height: 55px;
+  padding: 8px 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  position: relative;
+}
+
+.convenience .list_bottom {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.convenience .list_bottom p {
+  font-size: 8px;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.convenience .list_bottom img {
+  height: 25px;
+  margin-bottom: 3px;
+  margin-bottom: -2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 호선별 구분선  */
+.list_line.line1 {
+  width: 100%;
+  height: 2px;
+  background-color: #0A4086;
+  position: relative;
+  margin-top: -4px;
 }
 
-.App-link {
-  color: #61dafb;
+.list_line.line2 {
+  width: 100%;
+  height: 3px;
+  background-color: #01A046;
+  position: relative;
+  margin-top: -6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list_line.line3 {
+  width: 100%;
+  height: 3px;
+  background-color: #ED6A00;
+  position: relative;
+  margin-top: -6px;
 }
+
+.list_line.line4 {
+  width: 100%;
+  height: 3px;
+  background-color: #029CD2;
+  position: relative;
+  margin-top: -6px;
+}
+
+.list_line.line5 {
+  width: 100%;
+  height: 3px;
+  background-color: #764798;
+  position: relative;
+  margin-top: -6px;
+}
+
+.list_line.line6 {
+  width: 100%;
+  height: 3px;
+  background-color: #73371D;
+  position: relative;
+  margin-top: -6px;
+}
+
+.list_line.line7 {
+  width: 100%;
+  height: 3px;
+  background-color: #696E2E;
+  position: relative;
+  margin-top: -6px;
+}
+
+.list_line.line8 {
+  width: 100%;
+  height: 3px;
+  background-color: #D72271;
+  position: relative;
+  margin-top: -6px;
+}
+
+.list_line.line9 {
+  width: 100%;
+  height: 3px;
+  background-color: #A49E88;
+  position: relative;
+  margin-top: -6px;
+}
+
+.list_line.gtxa {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #9A6292;
+}
+
+.list_line.gyeongui {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #73C7A6;
+}
+
+.list_line.airport {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #006092;
+}
+
+.list_line.gimpo {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #947326;
+}
+
+.list_line.suinbundang {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #FABE00;
+}
+
+.list_line.yongin {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #509F22;
+}
+
+.list_line.sinrim {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #6776B9;
+}
+
+.list_line.sinbundang {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #C32D2F;
+}
+
+.list_line.ui {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #B7C450;
+}
+
+.list_line.uijeongbu {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #FD8100;
+}
+
+.list_line.incheon2 {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #F5A663;
+}
+
+.list_line.incheon {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #84B0DF;
+}
+
+.list_line.gyeongchun {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #006650;
+}
+
+.list_line.gyeonggang {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #1D2A54;
+}
+
+.list_line.seohaeline {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin-top: -6px;
+  background-color: #21AD40;
+}
+
+/* 호선별 list.top 배경색*/
+.list_top.line1 {background-color: #0A4086;}
+.list_top.line2 {background-color: #01A046;}
+.list_top.line3 {background-color: #ED6A00;}
+.list_top.line4 {background-color: #029CD2;}
+.list_top.line5 {background-color: #764798;}
+.list_top.line6 {background-color: #73371D;}
+.list_top.line7 {background-color: #696E2E;}
+.list_top.line8 {background-color: #D72271;}
+.list_top.line9 {background-color: #A49E88;}
+.list_top.gtxa {background-color: #9A6292}
+.list_top.gyeongui {background-color: #73C7A6;}
+.list_top.airport {background-color: #006092;}
+.list_top.gimpo {background-color: #947326;}
+.list_top.suinbundang {background-color: #FABE00;}
+.list_top.yongin {background-color: #509F22;}
+.list_top.sinrim {background-color: #6776B9;}
+.list_top.sinbundang {background-color: #C32D2F;}
+.list_top.ui {background-color: #B7C450;}
+.list_top.uijeongbu {background-color: #FD8100;}
+.list_top.incheon2 {background-color: #F5A663;}
+.list_top.incheon {background-color: #84B0DF;}
+.list_top.gyeongchun {background-color: #006650;}
+.list_top.gyeonggang {background-color: #1D2A54;}
+.list_top.seohaeline {background-color: #21AD40;}
+
+/* 호선별 hosun_num 배경색 */
+.hosun.line1 {background-color: #0A4086;}
+.hosun.line2 {background-color: #01A046;}
+.hosun.line3 {background-color: #ED6A00;}
+.hosun.line4 {background-color: #029CD2;}
+.hosun.line5 {background-color: #764798;}
+.hosun.line6 {background-color: #73371D;}
+.hosun.line7 {background-color: #696E2E;}
+.hosun.line8 {background-color: #D72271;}
+.hosun.line9 {background-color: #A49E88;}
+.hosun.gtxa {background-color: #9A6292;}
+.hosun.gyeongui {background-color: #73C7A6;}
+.hosun.airport {background-color: #006092;}
+.hosun.gimpo {background-color: #947326;}
+.hosun.suinbundang {background-color: #FABE00;}
+.hosun.yongin {background-color: #509F22;}
+.hosun.sinrim {background-color: #6776B9;}
+.hosun.sinbundang {background-color: #C32D2F;}
+.hosun.ui {background-color: #B7C450;}
+.hosun.uijeongbu {background-color: #FD8100;}
+.hosun.incheon2 {background-color: #F5A663;}
+.hosun.incheon {background-color: #84B0DF;}
+.hosun.gyeongchun {background-color: #006650;}
+.hosun.gyeonggang {background-color: #1D2A54;}
+.hosun.seohaeline {background-color: #21AD40;}

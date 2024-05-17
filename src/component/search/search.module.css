@@ -1,0 +1,43 @@
+.searcch_from{
+    position: absolute;
+    top: 90px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 1px 0px, rgba(17, 17, 26, 0.3) 0px 0px 8px;
+    border-radius: 35px;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 240px; height: 35px;
+    border-collapse: collapse;
+    border-radius: 35px;
+}
+.form input{
+    width: calc(100% - 40px); height: 35px;
+    padding: 0 0 0 15px; box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-right: none;
+    border-radius: 35px 0 0 35px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+    font-family: "Pretendard Variable", Pretendard, -apple-system;
+}
+.form input::placeholder{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.4);
+    font-family: "Pretendard Variable", Pretendard, -apple-system;
+}
+.form input:focus{outline: none;}
+.form button{
+    width: 40px; height: 35px;
+    border: 1px solid #641B6E;
+    border-radius: 0 35px 35px 0;
+    background: #641B6E;
+    cursor: pointer;
+}
+.form button img{width: 20px}

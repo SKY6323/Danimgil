@@ -1,0 +1,86 @@
+.container{padding: 80px 15px; box-sizing: border-box;}
+
+/* login */
+.login_area{
+    height: calc(100vh - 200px);
+    margin-top: 50px;
+    padding: 30px 15px; box-sizing: border-box;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: relative;
+}
+.login_area .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 65px;
+    padding: 0 5px; box-sizing: border-box;
+}
+.login_area .title > a > img{
+    height: 25px;
+}
+.login_area .title > div{
+    display: flex;
+    align-items: center;
+}
+.login_area .title > div > img{
+    height: 25px;
+    margin-left: 5px;
+}
+.login_area .title > div > h2{
+    font-size: 25px;
+    font-weight: 700;
+    color: #641B6E;
+}
+.login_area > a{
+    position: absolute;
+    top: 400px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #F89517;
+    text-decoration: underline;
+}
+
+/* from */
+form{width: 100%;}
+form label input{
+    width: 100%; height: 45px;
+    padding-left: 20px; box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 45px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    font-family: "Pretendard Variable", Pretendard, -apple-system;
+}
+form label input::placeholder{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    font-family: "Pretendard Variable", Pretendard, -apple-system;
+}
+form label input:focus{
+    outline: 1px solid #F89517;
+    box-shadow: none;
+}
+form .btn_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form .btn_area > button{
+    margin-top: 20px;
+    padding: 10px 30px; box-sizing: border-box;
+    background: #641B6E;
+    font-family: "Pretendard Variable", Pretendard, -apple-system;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}

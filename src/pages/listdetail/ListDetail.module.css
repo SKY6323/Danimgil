@@ -1,0 +1,224 @@
+/* map_main */
+.main_map {
+  position: relative;
+}
+
+.main_map>img {
+  display: block;
+}
+
+.main_map .dtmap {
+  width: 100%;
+}
+
+.dtclose {
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+}
+
+/* detadil-list(리스트 헤더) */
+.dtlist_box {
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+}
+
+.dtlist_top {
+  background-color: #00318F;
+  display: flex;
+  width: 100%;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dtlist_box .dthosun {
+  position: absolute;
+  top: 4px;
+  left: 103px;
+  width: 25px;
+  height: 25px;
+  background: #00318F;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.dtlist_box .dthosun_num {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-51%, -48%);
+  background: #fff;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 19px;
+}
+
+.dthosun_text {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-51%, -48%);
+  background: #fff;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  font-size: 5px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 19px;
+}
+
+.dtlist_box .dtstation {
+  background: #fff;
+  width: 150px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.dtlist_box .dtbtn_box {
+  background: inherit;
+  border: none;
+  position: absolute;
+  right: 60px;
+}
+
+.dtbtn_star {
+  height: 20px;
+}
+
+
+/* detail-place(편의시설 위치) */
+.dtplace {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 15px 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.dtplace>strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.dtlocation {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.dtplace_list {
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.dtplace_dtlist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: none;
+  width: 100%;
+  height: 25px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.dtplace_dtlist>div {
+  width: 25px;
+  height: 25px;
+  background: #F89517;
+  border: 1px solid #F89517;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dtplace_dtlist>div img {
+  height: 18px;
+  margin-top: 1px;
+}
+
+.dtplace_dtlist>p {
+  margin-left: 5px;
+}
+
+.dtlist_text {
+  font-size: 8px;
+  font-weight: 500;
+  color: #641B6E;
+}
+
+
+ /* 호선별 dtlist.top 배경색*/
+ .dtlist_top.line1 {background-color: #0A4086;}
+ .dtlist_top.line2 {background-color: #01A046;}
+ .dtlist_top.line3 {background-color: #ED6A00;}
+ .dtlist_top.line4 {background-color: #029CD2;}
+ .dtlist_top.line5 {background-color: #764798;}
+ .dtlist_top.line6 {background-color: #73371D;}
+ .dtlist_top.line7 {background-color: #696E2E;}
+ .dtlist_top.line8 {background-color: #D72271;}
+ .dtlist_top.line9 {background-color: #A49E88;}
+ .dtlist_top.gtxa {background-color: #9A6292}
+ .dtlist_top.gyeongui {background-color: #73C7A6;}
+ .dtlist_top.airport {background-color: #006092;}
+ .dtlist_top.gimpo {background-color: #947326;}
+ .dtlist_top.suinbundang {background-color: #FABE00;}
+ .dtlist_top.yongin {background-color: #509F22;}
+ .dtlist_top.sinrim {background-color: #6776B9;}
+ .dtlist_top.sinbundang {background-color: #C32D2F;}
+ .dtlist_top.ui {background-color: #B7C450;}
+ .dtlist_top.uijeongbu {background-color: #FD8100;}
+ .dtlist_top.incheon2 {background-color: #F5A663;}
+ .dtlist_top.incheon {background-color: #84B0DF;}
+ .dtlist_top.gyeongchun {background-color: #006650;}
+ .dtlist_top.gyeonggang {background-color: #1D2A54;}
+ .dtlist_top.seohaeline {background-color: #21AD40;}
+ /* 호선별 dthosun_num 배경색 */
+ .dthosun.line1 {background-color: #0A4086;}
+ .dthosun.line2 {background-color: #01A046;}
+ .dthosun.line3 {background-color: #ED6A00;}
+ .dthosun.line4 {background-color: #029CD2;}
+ .dthosun.line5 {background-color: #764798;}
+ .dthosun.line6 {background-color: #73371D;}
+ .dthosun.line7 {background-color: #696E2E;}
+ .dthosun.line8 {background-color: #D72271;}
+ .dthosun.line9 {background-color: #A49E88;}
+ .dthosun.gtxa {background-color: #9A6292;}
+ .dthosun.gyeongui {background-color: #73C7A6;}
+ .dthosun.airport {background-color: #006092;}
+ .dthosun.gimpo {background-color: #947326;}
+ .dthosun.suinbundang {background-color: #FABE00;}
+ .dthosun.yongin {background-color: #509F22;}
+ .dthosun.sinrim {background-color: #6776B9;}
+ .dthosun.sinbundang {background-color: #C32D2F;}
+ .dthosun.ui {background-color: #B7C450;}
+ .dthosun.uijeongbu {background-color: #FD8100;}
+ .dthosun.incheon2 {background-color: #F5A663;}
+ .dthosun.incheon {background-color: #84B0DF;}
+ .dthosun.gyeongchun {background-color: #006650;}
+ .dthosun.gyeonggang {background-color: #1D2A54;}
+ .dthosun.seohaeline {background-color: #21AD40;}
