@@ -29,4 +29,8 @@
 }
 
 /* list_area */
-.list_area{padding-top: 55px;}
+.list_area{
+    padding-top: 55px;
+    height: calc(100vh - 215px);
+    background: #EFEFEF;
+}

@@ -19,28 +19,23 @@ const List = ({ searchTerm }) => {
     const [convenienceData, setConvenienceData] = useState([]);
     const [escalatorData, setEscalatorData] = useState([]);
     const [rampDataState, setRampDataState] = useState([]);
-    const { user } = useAuthContext();
-    const [mark, setMark] = useState(false);
-    const navigator = useNavigate();
-    const API_KEY = 'YOUR_API_KEY'; // API_KEY를 실제 값으로 대체하세요.
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 // 노선별 지하철 역 데이터
-                const stationResponse = await axios.get(`https://openapi.seoul.go.kr:8088/${API_KEY}/JSON/SearchSTNBySubwayLineInfo/1/800`);
+                const stationResponse = await axios.get(`http://openapi.seoul.go.kr:8088/${API_KEY}/JSON/SearchSTNBySubwayLineInfo/1/800`);
                 const stationData = stationResponse.data.SearchSTNBySubwayLineInfo.row;
                 setStationData(stationData);
 
                 // 편의시설 유무 데이터
-                const convenienceResponse = await axios.get(`https://openapi.seoul.go.kr:8088/${API_KEY}/JSON/TbSeoulmetroStConve/1/300`);
+                const convenienceResponse = await axios.get(`http://openapi.seoul.go.kr:8088/${API_KEY}/JSON/TbSeoulmetroStConve/1/300`);
                 const convenienceData = convenienceResponse.data.TbSeoulmetroStConve.row;
                 setConvenienceData(convenienceData);
 
                 // 에스컬레이터 갯수 데이터
-                const escalatorResponse = await axios.get(`https://openapi.seoul.go.kr:8088/${API_KEY}/JSON/OdblrDspsnCvntl/1/300`);
+                const escalatorResponse = await axios.get(`http://openapi.seoul.go.kr:8088/${API_KEY}/JSON/OdblrDspsnCvntl/1/300`);
                 const escalatorData = escalatorResponse.data.OdblrDspsnCvntl.row;
-                setEscalatorData(escalatorData);
+                setEscalatorData(escalatorData)
 
                 // 경사로 위치 데이터 (json)
                 setRampDataState(rampData.DATA);
@@ -56,42 +51,47 @@ const List = ({ searchTerm }) => {
     const getConvenienceByStation = (stationName) => {
         const station = convenienceData.find(item => item.STATION_NAME === stationName);
         return station ? station : null;
-    };
+    }
 
     // 에스컬레이터 갯수가 0이면 불투명도 0.2
     const getEscalatorOpacity = (stationName) => {
         const stationEscalators = escalatorData.filter(item => item.STATN_NM === stationName);
         const escalatorCount = stationEscalators.length;
         return escalatorCount > 0 ? 1 : 0.2;
-    };
+    }
 
     // 경사로 위치 값이 없으면 불투명도 0.2
     const getRampOpacity = (stationName) => {
         const stationRamps = rampDataState.find(item => item.statn_nm === stationName);
         return stationRamps ? 1 : 0.2;
-    };
+    }
 
     // 검색어에 따라 필터링된 지하철 역을 반환
     const filteredStations = stationData.filter(station =>
         station.STATION_NM.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    
+    //즐겨찾기
+    const {user} = useAuthContext();
+    const [mark, setMark] = useState(false);
+    const navigator = useNavigate();
 
-    const userMark = (e) => {
+    const userMark = (e )=>{
         e.preventDefault();
-        user ? getBookmark() : locationLogin();
-    };
+        user ? getBookmark(): locationLogin();
+    }
 
-    const getBookmark = () => {
-        setMark(mark => !mark);
-    };
+    const getBookmark = () =>{
+        setMark(mark => !mark)
+    }
 
-    const locationLogin = () => {
-        if (window.confirm('로그인 후 이용 가능합니다.\n로그인 하시겠습니까?')) {
-            navigator('/login');
-        } else {
-            return false;
+    const locationLogin = () =>{
+        if(window.confirm('로그인 후 이용 가능합니다.\n로그인 하시겠습니까?')){
+            navigator('/login')
+        }else{
+            return false
         }
-    };
+    }
 
     return (
         <div className={styles.list_area}>
@@ -107,9 +107,11 @@ const List = ({ searchTerm }) => {
                                 )}
                             </div>
                             <div className={styles.station}>{station.STATION_NM}</div>
-                            <button className={styles.btn_box} onClick={userMark}>
+                            <button className={styles.btn_box}
+                            onClick={userMark}>
                                 <img className={styles.btn_star} src={!mark ? imgStar : imgStarW} alt="즐겨찾기" />
                             </button>
+
                         </div>
                         <ul className="convenience">
                             <li className="list_bottom">
@@ -150,7 +152,6 @@ const List = ({ searchTerm }) => {
             ))}
         </div>
     );
-};
-
+}
 
 export default List;
